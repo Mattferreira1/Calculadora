@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body  {
+  padding: 0;
+  font-family: "inter", sans-serif;
+  color: white;
+}
+
+body {
+  background: url(./assets/bg-desktop.jpg) no-repeat top center/cover;
+  height: 100vh;
+}
+
+#container {
+  margin:120px auto;
+  width: 500px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, .25);
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+#container input {
+  text-align: center;
+  border-radius: 8px;
+  background-color: black;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+}
+
+.buttons button {
+  background-color: transparent;
+  border: none;
+  background-color: rgb(74, 9, 74, 0.5);
+  padding: 8px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+
+  transition: background 0.2s;
+}
+.buttons button:hover {
+  background-color: rgb(74, 9, 74, 0.1);
+  border: 3.5px solid rgba(255, 255, 255, 1);
+}

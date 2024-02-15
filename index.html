@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Calculadora</h1>
+      <div class="buttons">
+      <div >
+        <h3>Número 1</h3>
+        <input id="number1" type="number" placeholder="Digite um número"/>
+      </div>
+      <div >
+        <h3>Número 2</h3>
+        <input id="number2" type="number" placeholder="Digite outro número"/>
+      </div>
+      <div id="submitbtn">
+          <button onclick="calcularSoma()">
+              <h5>Calcular</h5>
+          </button>
+      </div>
+      <div id="resulttext">
+        <h4 id="text"></h4>
+      </div>
+      </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
