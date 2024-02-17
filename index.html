@@ -9,24 +9,41 @@
   </head>
   <body>
     <div id="container">
-      <h1>Calculadora</h1>
-      <div class="buttons">
+      <div class="inputs">
+        <h1>Calculadora</h1>
       <div >
         <h3>Número 1</h3>
-        <input id="number1" type="number" placeholder="Digite um número"/>
+        <input id="number1" type="number" placeholder="Número 1 ou radicando"/>
       </div>
       <div >
         <h3>Número 2</h3>
-        <input id="number2" type="number" placeholder="Digite outro número"/>
+        <input id="number2" type="number" placeholder="Número 2 ou expoente"/>
       </div>
-      <div id="submitbtn">
-          <button onclick="calcularSoma()">
-              <h5>Calcular</h5>
-          </button>
       </div>
-      <div id="resulttext">
-        <h4 id="text"></h4>
+      <div class="buttongrid">
+        <!-- BOTÕES -->
+            <button onclick="calcularSoma()">
+                <h5>Soma</h5>
+            </button>
+            <button onclick="calcularSub()">
+                <h5>Subtração</h5>
+            </button>
+            <button onclick="calcularMulti()">
+                <h5>Multiplicação</h5>
+            </button>
+
+            <button onclick="calcularDivi()">
+                <h5>Divisão</h5>
+            </button>
+            <button onclick="calcularPoten()">
+                <h5>Potenciação</h5>
+            </button>
+            <button onclick="calcularRadi()">
+                <h5>²√</h5>
+            </button>
       </div>
+      <div>
+        <h4 id="resultado"></h4>
       </div>
     <script src="./index.js"></script>
   </body>
