@@ -1,78 +1,81 @@
+function addResult(result) {
+  document.querySelector("h4").textContent = result;
+}
+
+function getValues() {
+  return {
+    num1: parseFloat(document.getElementById("number1").value),
+    num2: parseFloat(document.getElementById("number2").value),
+  };
+}
+
 function calcularSoma() {
-  var number1 = document.getElementById("number1").value
-  var number2 = document.getElementById("number2").value
+  const { num1, num2 } = getValues();
 
-  var valor1 = parseFloat(number1)
-  var valor2 = parseFloat(number2)
-  var result = valor1 + valor2
+  let result = num1 + num2;
 
-  document.querySelector("h4").textContent = "O resultado é " + result
+  addResult(`O resultado é ${result}`);
+  clearResult();
 }
 
 function calcularSub() {
-  var number1 = document.getElementById("number1").value
-  var number2 = document.getElementById("number2").value
+  const { num1, num2 } = getValues();
+  let result = num1 - num2;
 
-  var valor1 = parseFloat(number1)
-  var valor2 = parseFloat(number2)
-  var result = valor1 - valor2
-
-  document.querySelector("h4").textContent = "O resultado é " + result
+  addResult(`O resultado é ${result}`);
+  clearResult();
 }
 
 function calcularMulti() {
-  var number1 = document.getElementById("number1").value
-  var number2 = document.getElementById("number2").value
+  const { num1, num2 } = getValues();
+  let result = num1 * num2;
 
-  var valor1 = parseFloat(number1)
-  var valor2 = parseFloat(number2)
-  var result = valor1 * valor2
-
-  document.querySelector("h4").textContent = "O resultado é " + result
+  addResult(`O resultado é ${result}`);
+  clearResult();
 }
 
 function calcularDivi() {
-  var number1 = document.getElementById("number1").value
-  var number2 = document.getElementById("number2").value
+  const { num1, num2 } = getValues();
+  if (num1 === 0 && num2 === 0) {
+    alert("Impossível dividir 0 por 0");
+  }
+  let result = num1 / num2;
 
-  var valor1 = parseFloat(number1)
-  var valor2 = parseFloat(number2)
-  var result = valor1 / valor2
-
-  document.querySelector("h4").textContent = "O resultado é " + result
+  addResult(`O resultado é ${result}`);
+  clearResult();
 }
 
 function calcularPoten() {
-  var number1 = document.getElementById("number1").value
-  var number2 = document.getElementById("number2").value
-
-  var valor1 = parseFloat(number1)
-  var valor2 = parseFloat(number2)
-  if (valor2 < 0 || Math.floor(valor2) !== valor2) {
-    document.querySelector("h4").textContent =
-      "O expoente deve ser um número inteiro não negativo."
+  const { num1, num2 } = getValues();
+  if (num2 < 0 || Math.floor(num2) !== num2) {
+    alert("O expoente deve ser um número inteiro não negativo.");
   }
 
-  if (valor2 === 0) {
-    document.querySelector("h4").textContent = "O resultado é 1"
+  if (num2 === 0) {
+    addResult(`O resultado é 1`);
+    clearResult();
+    return;
   }
 
-  let resultado = 1
-  for (let i = 0; i < valor2; i++) {
-    resultado *= valor1
-    document.querySelector("h4").textContent = "O resultado é " + resultado
+  let resultado = 1;
+  for (let i = 0; i < num2; i++) {
+    resultado *= num1;
+    addResult(`O resultado é ${resultado}`);
+    clearResult();
   }
 }
 function calcularRadi() {
-  var number1 = document.getElementById("number1").value
-  var number2 = document.getElementById("number2").value
-
-  var numero = parseFloat(number1)
-  if (numero < 0) {
-    return "Não é possível calcular a raiz quadrada de um número negativo."
+  const { num1 } = getValues();
+  if (num1 < 0) {
+    return "Não é possível calcular a raiz quadrada de um número negativo.";
   }
 
-  // Calcular a raiz quadrada usando Math.sqrt()
-  document.querySelector("h4").textContent = "A raiz de " + numero + " é igual a " + Math.sqrt(numero);
+  addResult(`A raiz de ${num1} é igual a ${Math.sqrt(num1)}`);
+  clearResult();
 }
 
+function clearResult() {
+  setTimeout(() => {
+    addResult("");
+  }, 1000 * 10);
+}
