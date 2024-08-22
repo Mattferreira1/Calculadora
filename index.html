@@ -1,50 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./style.css" />
-    <title>Calculadora</title>
-  </head>
-  <body>
-    <div id="container">
-      <div class="inputs">
-        <h1>Calculadora</h1>
-      <div >
-        <h3>Número 1</h3>
-        <input id="number1" type="number" placeholder="Número 1 ou radicando"/>
-      </div>
-      <div >
-        <h3>Número 2</h3>
-        <input id="number2" type="number" placeholder="Número 2 ou expoente"/>
-      </div>
-      </div>
-      <div class="buttongrid">
-        <!-- BOTÕES -->
-            <button onclick="calcularSoma()">
-                <h5>Soma</h5>
-            </button>
-            <button onclick="calcularSub()">
-                <h5>Subtração</h5>
-            </button>
-            <button onclick="calcularMulti()">
-                <h5>Multiplicação</h5>
-            </button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>calculator</title>
+</head>
+<body onkeypress="tecla()">
+    <div class="container">
+        <h5 id="calculator">Calculator</h5>
+        <h3 id="previous-number"></h3>
+        <h5 id="current-number"></h5>
+        <div class="button-grid">
+            <button onclick="clearvar()">CE</button>
+            <button>C</button>
+            <button>DEL</button>
+            <button onclick="calculator('/')">/</button>
+            <button onclick="calculator(7)" class="number">7</button>
+            <button onclick="calculator(8)" class="number">8</button>
+            <button onclick="calculator(9)" class="number">9</button>
+            <button onclick="calculator('*')">*</button>
+            <button onclick="calculator(4)" class="number">4</button>
+            <button onclick="calculator(5)" class="number">5</button>
+            <button onclick="calculator(6)" class="number">6</button>
+            <button onclick="calculator('-')">-</button>
+            <button onclick="calculator(1)" class="number">1</button>
+            <button onclick="calculator(2)" class="number">2</button>
+            <button onclick="calculator(3)" class="number">3</button>
+            <button onclick="calculator('+')">+</button>
+            <button onclick="calculator(0)" class="number">0</button>
+            <button onclick="calculator('.')" class="number">.</button>
+            <button onclick="calculator('=')" id="equal-btn">=</button>
+        </div>
+    </div>
 
-            <button onclick="calcularDivi()">
-                <h5>Divisão</h5>
-            </button>
-            <button onclick="calcularPoten()">
-                <h5>Potenciação</h5>
-            </button>
-            <button onclick="calcularRadi()">
-                <h5>²√</h5>
-            </button>
-      </div>
-      <div>
-        <h4 id="resultado"></h4>
-      </div>
-    <script src="./index.js"></script>
-  </body>
+    <script src="./script.js"></script>
+    <script language="JavaScript">
+        function tecla(){
+        //   window.alert("O código da tecla pressionada foi: " + event.keyCode);
+
+          switch(event.keyCode){
+            case 48:{
+                calculator(0)
+                break;
+            }
+            case 49:{
+                calculator(1)
+                break;
+            }
+            case 50:{
+                calculator(2)
+                break;
+            }
+            case 51:{
+                calculator(3)
+                break;
+            }
+            case 52:{
+                calculator(4)
+                break;
+            }
+            case 53:{
+                calculator(5)
+                break;
+            }
+            case 54:{
+                calculator(6)
+                break;
+            }
+            case 55:{
+                calculator(7)
+                break;
+            }
+            case 56:{
+                calculator(8)
+                break;
+            }
+            case 57:{
+                calculator(9)
+                break;
+            }
+            case 45:{
+                calculator("-")
+                break;
+            }
+            case 43:{
+                calculator("+")
+                break;
+            }
+            case 47:{
+                calculator("/")
+                break;
+            }
+            case 42:{
+                calculator("*")
+                break;
+            }
+            case 61:{
+                calculator("=")
+                break;
+            }
+            
+          }
+        }
+      </script>
+</body>
 </html>
